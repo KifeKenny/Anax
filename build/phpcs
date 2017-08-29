@@ -1,0 +1,12 @@
+
+FILE: C:\Users\watel\Desktop\dbwebb-kurser\ramverk1\me\anax\config\service.php
+------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+------------------------------------------------------------------------------
+ 39 | ERROR | [x] Whitespace found at end of line
+------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+------------------------------------------------------------------------------
+
+Time: 3.86 secs; Memory: 5Mb
+

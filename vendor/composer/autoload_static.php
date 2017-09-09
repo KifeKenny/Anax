@@ -11,6 +11,7 @@ class ComposerStaticInitf8cf3cf3667af1b0009f16f3ff832967
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         'dfc9e5dd545737efbb98020db79bfa08' => __DIR__ . '/..' . '/mos/cimage/defines.php',
         '507fe79d3e285fab95fad400b8d42245' => __DIR__ . '/..' . '/mos/cimage/functions.php',
+        'caf2ec0a102cfabe343e0b096c06797c' => __DIR__ . '/../..' . '/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -39,9 +40,9 @@ class ComposerStaticInitf8cf3cf3667af1b0009f16f3ff832967
             5 => __DIR__ . '/..' . '/anax/di/src',
             6 => __DIR__ . '/..' . '/anax/router/src',
             7 => __DIR__ . '/..' . '/anax/response/src',
-            8 => __DIR__ . '/..' . '/anax/view/src',
-            9 => __DIR__ . '/..' . '/anax/session/src',
-            10 => __DIR__ . '/..' . '/anax/textfilter/src',
+            8 => __DIR__ . '/..' . '/anax/session/src',
+            9 => __DIR__ . '/..' . '/anax/textfilter/src',
+            10 => __DIR__ . '/..' . '/anax/view/src',
         ),
     );
 

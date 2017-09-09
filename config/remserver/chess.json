@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "Name": "King",
+        "value": null,
+        "amount": 1
+    },
+    {
+        "id": 2,
+        "Name": "Queen",
+        "value": 9,
+        "amount": 1
+    },
+    {
+        "id": 3,
+        "Name": "Rook",
+        "value": 5,
+        "amount": 2
+    },
+    {
+        "id": 4,
+        "Name": "Bishops",
+        "value": 3,
+        "amount": 2
+    },
+    {
+        "id": 5,
+        "Name": "Knight",
+        "value": 3,
+        "amount": 2
+    },
+    {
+        "id": 6,
+        "Name": "pawn",
+        "value": 1,
+        "amount": 9
+    }
+]

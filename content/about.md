@@ -7,7 +7,7 @@ Om
 Detta är min about sida för kursen ramverk1 som jag studerar på
 BTH(Blekinges tekniska högskola)
 
-Min Github:
+Min Github: [GitHub](https://github.com/KifeKenny/Anax)
 
 <img src="../htdocs/img/php.jpg" class="phpImg">
 

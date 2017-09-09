@@ -10,4 +10,5 @@ return array(
     '2cffec82183ee1cea088009cef9a6fc3' => $vendorDir . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
     'dfc9e5dd545737efbb98020db79bfa08' => $vendorDir . '/mos/cimage/defines.php',
     '507fe79d3e285fab95fad400b8d42245' => $vendorDir . '/mos/cimage/functions.php',
+    'caf2ec0a102cfabe343e0b096c06797c' => $baseDir . '/src/functions.php',
 );

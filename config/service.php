@@ -13,6 +13,14 @@ $app->view       = new \Anax\View\ViewContainer();
 $app->textfilter = new \Anax\TextFilter\TextFilter();
 $app->session    = new \Anax\Session\SessionConfigurable();
 
+$app->comment    = new \Anax\Comment\Comment();
+$app->comController    = new \Anax\Comment\CommentController();
+
+//injekt session for faster use
+$app->comment->inject($app->session);
+$app->comController->inject($app->comment);
+// $app->comment->session->destroy();
+
 // Configure request
 $app->request->init();
 
@@ -30,6 +38,20 @@ $app->url->setStaticBaseUrl($app->request->getBaseUrl());
 $app->url->setScriptName($app->request->getScriptName());
 $app->url->configure("url.php");
 $app->url->setDefaultsFromConfiguration();
+
+// Add the REM server
+$app->rem           = new \Anax\RemServer\RemServer();
+$app->remController = new \Anax\RemServer\RemServerController();
+
+// Init REM Server
+$app->rem->configure("remserver.php");
+$app->rem->inject(["session" => $app->session]);
+
+
+// Init controller for the REM Server
+$app->remController->setApp($app);
+
+// $app->remController->anyDestroy();
 
 // Configure view
 $app->view->setApp($app);

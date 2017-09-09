@@ -26,7 +26,7 @@
       <ul class="nav navbar-nav">
         <li><a href="<?=$app->url->create("")?>">Home</a></li>
         <?php
-        $all_url = ["", "about", "report", "test"];
+        $all_url = ["", "about", "report", "test", "remserver", "comment"];
 
         for ($i=0; $i < count($all_url); $i++) {
             $cur_url = $app->url->create($all_url[$i]);

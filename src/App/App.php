@@ -18,9 +18,12 @@ class App
     // just my own render page more simple
     public function ownrenderPage($data, $status = 200)
     {
-        $this->view->add("incl/header", ["title" => [$data["title"], "css/style.css"]]);
+        $this->view->add("incl/header", ["title" => [$data["title"], $data["style"]]]);
         $this->view->add("incl/side-bar1");
-        $this->view->add($data["page"], ["resultset" => $data["res"]]);
+        foreach ($data["page"] as $value) {
+            $this->view->add($value, ["resultset" => $data["res"]]);
+        }
+        // $this->view->add($data["page"], ["resultset" => $data["res"]]);
         $this->view->add("incl/side-bar2");
         $this->view->add("incl/footer");
 

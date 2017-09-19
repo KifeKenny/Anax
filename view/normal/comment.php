@@ -18,13 +18,13 @@ if ($resultset == "null") {
 <form class="" action="<?=$url_this?>" method="post">
 <p>
     <label>Title</label><br>
-    <input type="text" name="comTitle" placeholder="<myTitle>">
+    <input type="text" name="comTitle" placeholder="<myTitle>" required>
 </p>
     <label>Mail</label><br>
-    <input type="text" name="comMail" placeholder="<username@hotmail.com>">
+    <input type="text" name="comMail" placeholder="<username@hotmail.com>" required>
 <p>
     <label>Text</label><br>
-    <textarea class="editText" name="comText" placeholder="<text>"></textarea>
+    <textarea class="editText" name="comText" placeholder="<text>" required></textarea>
 </p>
 
 <p>

@@ -7,89 +7,111 @@ namespace Anax\Comment;
  */
 class CommentController
 {
+    // use InjectionAwareTrait;
     public $comments;
     public $commentObj;
+    public $page;
 
     /**
-    * @param array or boolean: values of item we gona put in place
+    * @param array comment obj, Injekt comment objekt with all functions
     */
-    public function inject($com)
+    public function injects($com, $page1)
     {
         $this->commentObj = $com;
-        $this->commentObj->session->start();
+        $this->page = $page1;
         return $this;
     }
-    /**
-    * @param array or boolean: values of item we gona put in place
-    */
-    public function addComment($names, $keys, $mes, $deli = null)
-    {
-        $values = $this->commentObj->getPosts($names, $deli);
-        if ($values) {
-            $result = $this->commentObj->injectKeys($values, $keys);
 
-            $oldMes = $this->getMes($mes);
-            if ($oldMes != null) {
-                $result["id"] = count($oldMes);
-                array_push($oldMes, $result);
-                $this->commentObj->session->set($mes, $oldMes);
-                return true;
-            }
-            $result["id"] = 0;
-            $this->commentObj->session->set($mes, [$result]);
-            return true;
-        }
-        return false;
+    public function startSession()
+    {
+        $this->commentObj->session->start();
     }
 
-    public function getMes($mes)
+
+    public function getPage($data = null)
     {
-        $comments = $this->commentObj->session->get($mes);
-        if ($comments != null) {
-            return $comments;
+        if ($data == null) {
+            $data = [
+                "page" => ["normal/comment"],
+                "title" => "Edit | Comment",
+                "res" => null,
+                "style" => "css/style.css"
+            ];
         }
-        return false;
+        $this->page->ownrenderPage($data);
     }
 
-    public function getComId($id, $mes)
+    public function addcomentPrivate()
     {
-        $mes = $this->getMes($mes);
-        $count = count($mes) - 1;
-        if ($mes != null && $id <= $count) {
-            $result = $mes[$id];
-            return $result;
+
+        $values = ["comTitle", "comMail", "comText"];
+        $keys = ["Title", "Mail", "Text"];
+        $mes = "Messages";
+        $result = $this->commentObj->addComment($values, $keys, $mes);
+        $data = [
+            "page" => ["normal/comment"],
+            "title" => "Edit | Comment",
+            "res" => "1",
+            "style" => "css/style.css"
+        ];
+        if (!$result) {
+            $data["res"] = "2";
         }
-        return false;
+        $this->getPage($data);
     }
 
-    public function editCom($id, $mes, $names, $keys, $deli = null)
+    public function deleteComment()
     {
-        $mese = $this->getMes($mes);
 
-        $values = $this->commentObj->getPosts($names, $deli);
-        if ($values) {
-            $newcom = $this->commentObj->injectKeys($values, $keys);
-            // $old_com = $this->getComId($id, $mes);
-            if ($newcom) {
-                $newcom["id"] = $id;
-                $mese[$id] = $newcom;
-                $this->commentObj->session->set($mes, $mese);
-                return true;
-            }
+        $mes = "Messages";
+        $id = isset($_GET["id"]) ? $_GET["id"] : null;
+        if ($id != null) {
+            $this->commentObj->delId($id, $mes);
         }
-        return false;
+        $this->getPage();
     }
 
-    public function delId($id, $mes)
+    public function editPageGet()
     {
-        $allvalues = $this->getMes($mes);
-        if ($allvalues && $id != null) {
-            foreach ($allvalues as $val) {
-                if ($val["id"] == $id) {
-                    unset($allvalues[$id]);
-                    $this->commentObj->session->set($mes, $allvalues);
-                }
+        $id = isset($_GET["id"]) ? $_GET["id"] : null;
+        $data = [
+            "page" => ["default/404"],
+            "title" => "Edit | Comment",
+            "res" => null,
+            "style" => "../css/style.css"
+        ];
+        if ($id != null) {
+            $res = $this->commentObj->getComId($id, "Messages");
+            if ($res) {
+                $data["page"] = ["normal/comEdit"];
+                $data["res"] = $res;
+                $data["res"]["result"] = "0";
             }
         }
+        $this->getPage($data);
+    }
+
+    public function editPage()
+    {
+        $id = isset($_GET["id"]) ? $_GET["id"] : null;
+
+        $data = [
+            "page" => ["default/404"],
+            "title" => "Edit | Comment",
+            "res" => null,
+            "style" => "../css/style.css"
+        ];
+        $data["res"]["result"] = "2";
+        $values = ["comEdiTitle", "comEdiMail", "comEdiText"];
+        $keys = ["Title", "Mail", "Text"];
+        $mes = "Messages";
+        $result = $this->commentObj->editCom($id, $mes, $values, $keys);
+
+        if ($result) {
+            $data["res"] = $this->commentObj->getComId($id, "Messages");
+            $data["res"]["result"] = "1";
+            $data["page"] = ["normal/comEdit"];
+        }
+        $this->getPage($data);
     }
 }

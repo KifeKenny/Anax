@@ -37,12 +37,13 @@ class ComposerStaticInitf8cf3cf3667af1b0009f16f3ff832967
             2 => __DIR__ . '/..' . '/anax/common/src',
             3 => __DIR__ . '/..' . '/anax/url/src',
             4 => __DIR__ . '/..' . '/anax/configure/src',
-            5 => __DIR__ . '/..' . '/anax/di/src',
-            6 => __DIR__ . '/..' . '/anax/router/src',
-            7 => __DIR__ . '/..' . '/anax/response/src',
-            8 => __DIR__ . '/..' . '/anax/session/src',
-            9 => __DIR__ . '/..' . '/anax/textfilter/src',
+            5 => __DIR__ . '/..' . '/anax/session/src',
+            6 => __DIR__ . '/..' . '/anax/textfilter/src',
+            7 => __DIR__ . '/..' . '/anax/di/src',
+            8 => __DIR__ . '/..' . '/anax/router/src',
+            9 => __DIR__ . '/..' . '/anax/response/src',
             10 => __DIR__ . '/..' . '/anax/view/src',
+            11 => __DIR__ . '/..' . '/anax/page/src',
         ),
     );
 

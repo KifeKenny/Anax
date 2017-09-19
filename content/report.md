@@ -134,7 +134,38 @@ Jag tog så mycket inspiration som jag kunde från remserver modulen, hur koden 
 Tycker att jag lyckades okej kan nog strukturera upp koden i CommentController klassen bättre och har nog några funktioner i den som borde ligga i Comment klassen istället. Använde mig av Sessioner istället för remservern eftersom jag inte förstod helt hur man la till värde och tog bort värden. Försökte ett tag men kom ingen vart så det fick bli Sessioner istället.
 
 #Kmom03
-text
+
+**Uppgift 1**
+Följde övningarna som visade hur man skulle göra. Fungerade bra med det att införa ”di” i mitt system. Att införa ”di” i min kommentar klass var inga svårigheter hade redan en injekt funktion så var bara att byta så att jag injektade dem klasser jag ville ha med di istället. Osäker på om jag har skrivit min ”comment controller” klass på ett bra sätt eller inte, men det duger väll så länge.
+Hade lite problem med att implementera dem nya routerna eftersom jag skickade in vissa parametrar till min ”comment controller” klass innan. Vilket jag inte kunde göra nu. Men det löste sig tillslut med. Rätt nöjd med min ”comment” klass men mindre nöjd med min ”comment controller” klass
+
+
+
+**1.Hur känns det att jobba med begreppen kring dependency injection, service locator och lazy loading?**
+
+Det kändes bra. Lite förvirrande i början men tycker att jag förstår grunderna av dem nu.
+
+
+**2.Hur känns det att göra dig av med beroendet till $app, blir $id bättre?**
+Kändes bra. Tycker koden ser bättre ut överlag och den är också enklare att arbeta med. Enda problemet jag hade var routerna. Tyckte det var jobbigt att jag inte kan skicka in parametrar till mina funktioner.
+
+**3.Hur känns det att återigen göra refaktoring på din me-sida, blir det förbättringar på kodstrukturen, eller bara annorlunda?**
+
+Det är bra. Känns som att jag skriver bättre och bättre kod. Tycker även att kodstrukturen blir bättre när man använder sig av ”$di”. Ja överlag gillar jag att lära mer olika sätt att strukturera min kod.
+
+**4.Lyckades du införa begreppen kring DI när du vidareutvecklade ditt kommentarssystem?**
+Ja det gjorde jag. Tyckte inte det var några större svårigheter att införa det i min kommentar klass.
+
+**5.Påbörjade du arbetet (hur gick det) med databasmodellen eller avvaktar du till kommande kmom?**
+Skrev en simple mysql kod med två tabeller för kommentarer och användare. Införde databas klassen i mitt system. Men jag väntar med att införa den i min kommentar klass till nästa kursmoment.
+
+**6.Allmänna kommentare kring din me-sida och dess kodstruktur?**
+Gillar kodstrukturen mer nu. Tycker den ser bättre ut med ”$di”. Tycker det var enklare att använda dem gamla routerna än dem nya. Så i stort sätt gillade jag rout strukturen så som den var innan med ”$app”, men resten blev bättre.
+
+
+
+
+
 #Kmom04
 text
 #Kmom05

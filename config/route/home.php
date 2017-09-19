@@ -39,7 +39,7 @@ $app->router->add("comment/edit", function () use ($app) {
 
 
 $app->router->add("comment", function () use ($app) {
-    $id = getGet("id");
+    $id = getGet("id"); 
     $data = [
         "page" => ["normal/comment"],
         "title" => "Comment",
@@ -48,6 +48,7 @@ $app->router->add("comment", function () use ($app) {
     ];
 
     $app->comController->delId($id, "Messages");
+    // $di->comController->delId($id, "Messages");
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $values = ["comTitle", "comMail", "comText"];

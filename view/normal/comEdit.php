@@ -3,7 +3,6 @@
 if ($resultset == null) {
     return;
 }
-// var_dump($resultset["result"]);
 ?>
 
 <h1> Edit comment </h1>
@@ -21,13 +20,13 @@ if ($resultset["result"] == "1") {
 <form class="" action="" method="post">
 <p>
     <label>Title</label><br>
-    <input type="text" name="comEdiTitle" placeholder="<myTitle>" value="<?=$resultset["Title"]?>">
+    <input type="text" name="comEdiTitle" placeholder="<myTitle>" value="<?=htmlentities($resultset["Title"])?>" required>
 </p>
     <label>Mail</label><br>
-    <input type="text" name="comEdiMail" placeholder="<username@hotmail.com>" value="<?=$resultset["Mail"]?>">
+    <input type="text" name="comEdiMail" placeholder="<username@hotmail.com>" value="<?=htmlentities($resultset["Mail"])?>" required>
 <p>
     <label>Text</label><br>
-    <textarea class="editText" name="comEdiText" placeholder="<text>"> <?=$resultset["Text"]?> </textarea>
+    <textarea class="editText" name="comEdiText" placeholder="<text>" required><?=htmlentities($resultset["Text"])?></textarea>
 </p>
 
 <p>

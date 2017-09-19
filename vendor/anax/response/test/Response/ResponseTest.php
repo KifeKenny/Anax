@@ -1,32 +1,26 @@
 <?php
-/**
- * Test response module.
- */
 
 namespace Anax\Response;
 
+/**
+ * Test response module.
+ */
 class ResponseTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Test.
-     * @expectedException \Anax\Response\Exception
+     * Try setting various status codes.
      */
-    public function testStatusCode()
+    public function testStatusCodes()
     {
         $resp = new Response();
-        $resp->setStatusCode(-1);
-    }
-
-
-
-    /**
-     * Test.
-     * @expectedException \Anax\Response\Exception
-     */
-    public function testHeadersAlreadySent()
-    {
-        $resp = new Response();
-        $resp->checkIfHeadersAlreadySent();
+        $resp->setStatusCode(200);
+        $resp->setStatusCode(400);
+        $resp->setStatusCode(403);
+        $resp->setStatusCode(404);
+        $resp->setStatusCode(405);
+        $resp->setStatusCode(418);
+        $resp->setStatusCode(500);
+        $resp->setStatusCode(501);
     }
 
 

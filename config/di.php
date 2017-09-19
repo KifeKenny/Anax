@@ -33,16 +33,16 @@ return [
                 return $url;
             }
         ],
-        "database" => [
-            "shared" => true,
-            "callback" => function () {
-                $database = new \Anax\Database\DatabaseConfigure();
-                $database->configure("database.php");
-                $database->setDefaultsFromConfiguration();
-                $database->connect();
-                return $database;
-            }
-        ],
+        // "database" => [
+        //     "shared" => true,
+        //     "callback" => function () {
+        //         $database = new \Anax\Database\DatabaseConfigure();
+        //         $database->configure("database.php");
+        //         $database->setDefaultsFromConfiguration();
+        //         $database->connect();
+        //         return $database;
+        //     }
+        // ],
         "view" => [
             "shared" => true,
             "callback" => function () {

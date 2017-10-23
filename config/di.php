@@ -16,7 +16,11 @@ return [
         ],
         "response" => [
             "shared" => true,
-            "callback" => "\Anax\Response\Response",
+            "callback" => function () {
+                $obj = new \Anax\Response\ResponseUtility();
+                $obj->setDI($this);
+                return $obj;
+            }
         ],
         "url" => [
             "shared" => true,
@@ -33,16 +37,6 @@ return [
                 return $url;
             }
         ],
-        // "database" => [
-        //     "shared" => true,
-        //     "callback" => function () {
-        //         $database = new \Anax\Database\DatabaseConfigure();
-        //         $database->configure("database.php");
-        //         $database->setDefaultsFromConfiguration();
-        //         $database->connect();
-        //         return $database;
-        //     }
-        // ],
         "view" => [
             "shared" => true,
             "callback" => function () {
@@ -62,9 +56,11 @@ return [
         ],
         "session" => [
             "shared" => true,
+            "active" => true,
             "callback" => function () {
                 $session = new \Anax\Session\SessionConfigurable();
                 $session->configure("session.php");
+                $session->start();
                 return $session;
             }
         ],
@@ -72,14 +68,14 @@ return [
             "shared" => true,
             "callback" => "\Anax\TextFilter\TextFilter",
         ],
-        "errorController" => [
-            "shared" => true,
-            "callback" => function () {
-                $obj = new \Anax\Page\ErrorController();
-                $obj->setDI($this);
-                return $obj;
-            }
-        ],
+        // "errorController" => [
+        //     "shared" => true,
+        //     "callback" => function () {
+        //         $obj = new \Anax\Page\ErrorController();
+        //         $obj->setDI($this);
+        //         return $obj;
+        //     }
+        // ],
         "debugController" => [
             "shared" => true,
             "callback" => function () {
@@ -101,7 +97,6 @@ return [
             "callback" => function () {
                 $obj = new \Anax\Comment\CommentController();
                 $obj->injects($this->get("comment"), $this->get("pageRender"));
-                $obj->startSession();
                 return $obj;
             }
         ],
@@ -145,6 +140,39 @@ return [
                 $rem = new \Anax\RemServer\RemServerController();
                 $rem->setDI($this);
                 return $rem;
+            }
+        ],
+        "userController" => [
+            "shared" => true,
+            "callback" => function () {
+                $obj = new \Anax\User\UserController();
+                $obj->setDI($this);
+                // $obj->startSession($this->get("session"));
+                return $obj;
+            }
+        ],
+        "db" => [
+            "shared" => true,
+            "callback" => function () {
+                $obj = new \Anax\Database\DatabaseQueryBuilder();
+                $obj->configure("database.php");
+                return $obj;
+            }
+        ],
+        "bookController" => [
+            "shared" => true,
+            "callback" => function () {
+                $obj = new \Anax\Book\BookController();
+                $obj->setDI($this);
+                return $obj;
+            }
+        ],
+        "Comment2Controller" => [
+            "shared" => true,
+            "callback" => function () {
+                $obj = new \Anax\Comment2\Comment2Controller();
+                $obj->setDI($this);
+                return $obj;
             }
         ],
     ],

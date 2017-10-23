@@ -167,7 +167,39 @@ Gillar kodstrukturen mer nu. Tycker den ser bättre ut med ”$di”. Tycker det
 
 
 #Kmom04
-text
+**Uppgift 1**<br>
+Integrera dem delar som visades i övningarna. Kommer nog att fixa till lite saker till nästa kursmoment. T.ex nu har jag så att admin inte kan ändra lösenord på andra användare(det kommer jag införa). Kommer även att införa förbättringar i navbaren och göra så att kommentar namnen på kommentar sidan ändras när en användare ändrar sin mejl.
+
+**Uppgift 2 (Integrera bok exemplet)**<br>
+Inga svårigheter här. Följde övningen och gjorde som det visades där.
+
+**Uppgift 3 (Kommentarsystem)**<br>
+Vet ej nu i efterhand inte varför jag skrev om min kommentars klass. Jag skrev den liknande som bok klassen. Men nu i efterhand tänker jag varför jag inte bara skrev en extension till min nuvarande kommentar klass och t.ex bara tog slutvärdena av den klassen och placerade in dem i en databas. Men annars gick det bra.
+
+
+**1. Hur gick det att integrera formulärhantering och databashantering i ditt kommentarsystem?**<br>
+Det gick bra. Bortsett från att jag gjorde lite onödigt arbete som jag förklarade ovan.
+
+
+**4. Berätta om din syn på Active record och liknande upplägg, ser du fördelar och nackdelar?**<br>
+Fördelen är ju att den är mycket enklare att använda. Samt att koden blir mer uppdelad. Kollade igenom klassen och förstår mig inte helt på den, men jag vet hur jag använder mig av den. Vet inte riktigt om jag föredrar detta sättet eller den andra databas klassen jag hade, jag får se i framtiden.
+
+
+**3. Utveckla din syn på koden du nu har i ramverket och din kommentars- och användarkod. Hur känns det?**<br>
+Det känns bra. Tycker att jag känner mig inne på nästan allt. Jag förstår vad som händer och hur det mesta fungerar.
+
+**4. Om du vill, och har kunskap om, kan du även berätta om din syn på ORM och designmönstret Data Mapper som är närbesläktade med Active Record. Du kanske har erfarenhet av likande upplägg i andra sammanhang?**<br>
+Jag skippar denna :).
+
+**5.Vad tror du om begreppet scaffolding, kan det vara något att kika mer på?**<br>
+Ja det tycker jag.
+
+
+
+
+
+
+
 #Kmom05
 text
 #Kmom06

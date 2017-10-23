@@ -11,7 +11,14 @@ hr {
     border-radius: 20px;
 }
 
-input[type=text], select {
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+}
+
+
+input[type=text], select, input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -36,9 +43,47 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
+table.books {
+    font-size: 16px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th.books-header {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: #607d8b;
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+    color: white;
+}
+
+
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
 .editText {
     height: 200px;
-    width: 400px;
+    width: 100%;
 }
 
 .commentBorder {
@@ -49,6 +94,22 @@ input[type=submit]:hover {
 
 .left {
     float: left;
+}
+
+.right {
+    float: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.large {
+    font-size: large;
+}
+
+.widgetAddon {
+    border: 1px solid black;
 }
 
 .bild_jag {
@@ -97,12 +158,26 @@ input[type=submit]:hover {
   height: 100%;
 }
 
-/* Set black background color, white text and some padding */
-footer {
-  background-color: #555;
-  color: white;
-  padding: 15px;
+.widget {
+    width: 98.0%;
+    height: 50px;
+    margin: 0 1.0% 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: auto;
+
 }
+
+.widget2 {
+    width: 98.0%;
+    min-height: 50px;
+    margin: 0 1.0% 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: auto;
+    background-color: green;
+}
+
 
 /* On small screens, set height to 'auto' for sidenav and grid */
 @media screen and (max-width: 767px) {
@@ -111,4 +186,37 @@ footer {
     padding: 15px;
   }
   .row.content {height:auto;}
+}
+
+/*---------------------------------------------------------------------------------*/
+/*media style widgets*/
+/*---------------------------------------------------------------------------------*/
+@media (min-width: 500px) {
+    .widget {
+        width: 48.0%;
+    }
+
+}
+
+@media (min-width: 700px) {
+    .widget {
+        width: 31.3333333333333%;
+    }
+
+    .widget2 {
+        width: 48.0%;
+        margin-left: 25%;
+    }
+}
+
+@media (min-width: 980px) {
+    .widget {
+        width: 23.0%;
+    }
+}
+
+@media (min-width: 1199px) {
+    .widget {
+        width: 23.0%;
+    }
 }

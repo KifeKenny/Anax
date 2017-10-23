@@ -36,5 +36,20 @@ return [
             "mount" => null,
             "file" => __DIR__ . "/route2/404.php",
         ],
+        [
+            // Add routes from bookController and mount on book/
+            "mount" => "book",
+            "file" => __DIR__ . "/route2/bookController.php",
+        ],
+        [
+            // Add routes from bookController and mount on book/
+            "mount" => "user",
+            "file" => __DIR__ . "/route2/userController.php",
+        ],
+        [
+            // Add routes from bookController and mount on book/
+            "mount" => "comment2",
+            "file" => __DIR__ . "/route2/comment2.php",
+        ],
     ],
 ];

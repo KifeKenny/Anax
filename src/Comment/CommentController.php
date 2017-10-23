@@ -24,7 +24,7 @@ class CommentController
 
     public function startSession()
     {
-        $this->commentObj->session->start();
+        // $this->commentObj->session->start();
     }
 
 

@@ -26,15 +26,32 @@
       <ul class="nav navbar-nav">
         <li><a href="<?=$app->url->create("")?>">Home</a></li>
         <?php
-        $all_url = ["", "about", "report", "remserver", "comment"];
+        $all_url = ["", "about", "report", "remserver", "comment2", "book"];
 
         for ($i=0; $i < count($all_url); $i++) {
             $cur_url = $app->url->create($all_url[$i]);
             echo '<li><a href=' . $cur_url . '>' . $all_url[$i] . "</a></li>";
         }
-
+        $session = $di->get("session");
+        $cur_user = $session->get("current_user");
+        $login_url = $app->url->create("user/logout");
+        $profile_url = $app->url->create("user/profile");
+        $login_name = "Logout";
+        if (!$cur_user) {
+            $login_url = $app->url->create("user/login");
+            $login_name = "Login";
+        }
         ?>
-      </ul>
+
+    </ul>
+    <?php if ($cur_user) : ?>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="<?=$profile_url?>"><?=$cur_user?></a></li>
+        </ul>
+    <?php endif; ?>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="<?=$login_url?>"><?=$login_name?></a></li>
+    </ul>
     </div>
   </div>
 </nav>

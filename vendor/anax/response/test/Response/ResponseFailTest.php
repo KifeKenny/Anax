@@ -16,16 +16,4 @@ class ResponseFailTest extends \PHPUnit_Framework_TestCase
         $resp = new Response();
         $resp->setStatusCode(-1);
     }
-
-
-
-    /**
-     * Test.
-     * @expectedException \Anax\Response\Exception
-     */
-    public function testHeadersAlreadySent()
-    {
-        $resp = new Response();
-        $resp->checkIfHeadersAlreadySent();
-    }
 }

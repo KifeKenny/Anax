@@ -39,14 +39,32 @@ class Response
      *
      * @param string $header type of header to set
      *
-     * @return $this
+     * @return self
      */
     public function setStatusCode($value)
     {
+        if (is_null($value)) {
+            return $this;
+        }
+
         if (!array_key_exists($value, $this->validStatusCode)) {
             throw new Exception("Unsupported statuscode: $value");
         }
+
         $this->statusCode = $value;
+        return $this;
+    }
+
+
+
+    /**
+     * Get status code to be sent as part of headers.
+     *
+     * @return integer value as status code or null if not set.
+     */
+    public function getStatusCode()
+    {
+        return $this->statusCode;
     }
 
 
@@ -56,17 +74,19 @@ class Response
      *
      * @param string $header type of header to set
      *
-     * @return $this
+     * @return self
      */
     public function addHeader($header)
     {
         $this->headers[] = $header;
+        return $this;
     }
 
 
 
     /**
-     * Check if headers are already sent and throw exception if it is.
+     * Check if headers are already sent and throw exception if it has,
+     * but ignore when running in cli mode.
      *
      * @return void
      *
@@ -74,7 +94,7 @@ class Response
      */
     public function checkIfHeadersAlreadySent()
     {
-        if (headers_sent($file, $line)) {
+        if (php_sapi_name() !== 'cli' && headers_sent($file, $line)) {
             throw new Exception("Try to send headers but headers already sent, output started at $file line $line.");
         }
     }
@@ -84,7 +104,7 @@ class Response
     /**
      * Send headers.
      *
-     * @return $this
+     * @return self
      */
     public function sendHeaders()
     {
@@ -109,7 +129,7 @@ class Response
      * @param callable|string $body either a string or a callable that
      *                              can generate the body.
      *
-     * @return this
+     * @return self
      */
     public function setBody($body)
     {
@@ -130,7 +150,7 @@ class Response
     /**
      * Get the body.
      *
-     * @return void
+     * @return string
      */
     public function getBody()
     {
@@ -144,18 +164,18 @@ class Response
      *
      * @param integer $statusCode optional statuscode to send.
      *
-     * @return void
+     * @return self
      */
     public function send($statusCode = null)
     {
-        if ($statusCode) {
-            $this->setStatusCode($statusCode);
-        }
+        $this->setStatusCode($statusCode);
 
         if (!headers_sent()) {
             $this->sendHeaders();
         }
+
         echo $this->getBody();
+        return $this;
     }
 
 
@@ -166,19 +186,29 @@ class Response
      * @param mixed   $data       to be encoded as json.
      * @param integer $statusCode optional statuscode to send.
      *
-     * @return void
+     * @return self
      */
     public function sendJson($data, $statusCode = null)
     {
-        if ($statusCode) {
-            $this->setStatusCode($statusCode);
-        }
+        return $this->setStatusCode($statusCode)
+                    ->setJsonBody($data)
+                    ->send();
+    }
 
-        if (!headers_sent()) {
-            $this->addHeader("Content-Type: application/json; charset=utf8");
-            $this->sendHeaders();
-        }
-        echo json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+
+
+    /**
+     * Set body with JSON data.
+     *
+     * @param mixed $data to be encoded as json.
+     *
+     * @return self
+     */
+    public function setJsonBody($data)
+    {
+        $this->addHeader("Content-Type: application/json; charset=utf8");
+        $this->setBody(json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+        return $this;
     }
 
 

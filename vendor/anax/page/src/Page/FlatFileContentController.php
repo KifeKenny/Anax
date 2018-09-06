@@ -47,30 +47,15 @@ class FlatFileContentController implements InjectionAwareInterface
             ["yamlfrontmatter", "shortcode", "markdown", "titlefromheader"]
         );
 
-        // $app->view->add("incl/header", ["title" => ["", "css/style.css"]]);
-        // $app->view->add("incl/side-bar1");
-
-        $this->di->get("view")->add("incl/header", [
-            "title" => ["", "css/style.css"]
-        ]);
-        $this->di->get("view")->add("incl/side-bar1", [
-            "title" => ["", "css/style.css"]
-        ]);
-
         // Render a standard page using layout
+        $this->di->get("view")->add("incl/header", ["title" => ["Book", "css/style.css"]]);
+        $this->di->get("view")->add("incl/side-bar1");
         $this->di->get("view")->add("default1/article", [
             "content" => $content->text,
             "frontmatter" => $content->frontmatter,
         ]);
-
-        $this->di->get("view")->add("incl/side-bar2", [
-            "title" => ["", "css/style.css"]
-        ]);
-
-        $this->di->get("view")->add("incl/footer", [
-            "title" => ["", "css/style.css"]
-        ]);
-
+        $this->di->get("view")->add("incl/side-bar2");
+        $this->di->get("view")->add("incl/footer");
         $this->di->get("pageRender")->renderPage($content->frontmatter);
     }
 }

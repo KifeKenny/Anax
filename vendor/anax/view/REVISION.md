@@ -2,6 +2,30 @@ Revision history
 =================================
 
 
+v1.0.26 (2018-04-23)
+---------------------------------
+
+* Update config file for scrutinizer to install phpunit.
+
+
+v1.0.25 (2018-04-23)
+---------------------------------
+
+* Added views in view/anax/v1.
+
+
+v1.0.24 (2018-03-14)
+---------------------------------
+
+* Add get_defined_functions() for view helper showEnvironment.
+
+
+v1.0.23 (2017-10-17)
+---------------------------------
+
+* Include view helpers only once, needed for unit tests, fix #3.
+
+
 v1.0.21 (2017-09-14)
 ---------------------------------
 

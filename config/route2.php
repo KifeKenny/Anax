@@ -26,16 +26,11 @@ return [
             "mount" => null,
             "file" => __DIR__ . "/route2/flat-file-content.php",
         ],
-        [
-            // Default pages/
-            "mount" => null,
-            "file" => __DIR__ . "/route2/comment.php",
-        ],
-        [
-            // Keep this last since its a catch all
-            "mount" => null,
-            "file" => __DIR__ . "/route2/404.php",
-        ],
+        // [
+        //     // Keep this last since its a catch all
+        //     "mount" => null,
+        //     "file" => __DIR__ . "/route2/404.php",
+        // ],
         [
             // Add routes from bookController and mount on book/
             "mount" => "book",
@@ -48,8 +43,8 @@ return [
         ],
         [
             // Add routes from bookController and mount on book/
-            "mount" => "comment2",
-            "file" => __DIR__ . "/route2/comment2.php",
+            "mount" => "comment",
+            "file" => __DIR__ . "/route2/commentMod.php",
         ],
     ],
 ];

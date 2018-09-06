@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
-    'Anax\\' => array($baseDir . '/src', $vendorDir . '/anax/request/src', $vendorDir . '/anax/common/src', $vendorDir . '/anax/url/src', $vendorDir . '/anax/configure/src', $vendorDir . '/anax/session/src', $vendorDir . '/anax/textfilter/src', $vendorDir . '/anax/di/src', $vendorDir . '/anax/router/src', $vendorDir . '/anax/response/src', $vendorDir . '/anax/view/src', $vendorDir . '/anax/page/src', $vendorDir . '/anax/database/src', $vendorDir . '/anax/htmlform/src'),
+    'Kifekenny\\' => array($vendorDir . '/kifekenny/comment/src'),
+    'Anax\\' => array($baseDir . '/src', $vendorDir . '/anax/common/src', $vendorDir . '/anax/response/src', $vendorDir . '/anax/request/src', $vendorDir . '/anax/page/src', $vendorDir . '/anax/textfilter/src', $vendorDir . '/anax/router/src', $vendorDir . '/anax/configure/src', $vendorDir . '/anax/url/src', $vendorDir . '/anax/session/src', $vendorDir . '/anax/di/src', $vendorDir . '/anax/htmlform/src', $vendorDir . '/anax/database/src', $vendorDir . '/anax/view/src', $vendorDir . '/kifekenny/comment/src'),
 );

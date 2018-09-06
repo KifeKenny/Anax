@@ -2,6 +2,7 @@
 
 namespace Anax\View;
 
+$create = url("");
 /**
  * View to create a new book.
  */
@@ -12,15 +13,11 @@ namespace Anax\View;
 // Gather incoming variables and use default values if not set
 $items = isset($items) ? $items : null;
 
-// Create urls for navigation
-$urlToViewItems = url("comment2");
-
-
 
 ?><h1>Comment</h1>
 
 <?= $form ?>
 
 <p>
-    <a href="<?= $urlToViewItems ?>">Back</a>
+    <a href="<?=$create?>">Back</a>
 </p>

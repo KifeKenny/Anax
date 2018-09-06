@@ -100,6 +100,14 @@ return [
                 return $obj;
             }
         ],
+        "comment2Controller" => [
+            "shared" => true,
+            "callback" => function () {
+                $obj = new \Kifekenny\Comment\Comment2Controller();
+                $obj->setDI($this);
+                return $obj;
+            }
+        ],
         "flatFileContentController" => [
             "shared" => true,
             "callback" => function () {
@@ -167,13 +175,13 @@ return [
                 return $obj;
             }
         ],
-        "Comment2Controller" => [
-            "shared" => true,
-            "callback" => function () {
-                $obj = new \Anax\Comment2\Comment2Controller();
-                $obj->setDI($this);
-                return $obj;
-            }
-        ],
+        // "Comment2Controller" => [
+        //     "shared" => true,
+        //     "callback" => function () {
+        //         $obj = new \Anax\Comment2\Comment2Controller();
+        //         $obj->setDI($this);
+        //         return $obj;
+        //     }
+        // ],
     ],
 ];

@@ -4,14 +4,13 @@ namespace Anax\Session;
 
 /**
  * Class for wrapping sessions.
- *
  */
-class Session
+class Session implements SessionInterface
 {
     /**
      * Set a session name.
      *
-     * @param array $name to set as session name.
+     * @param string $name to set as session name.
      *
      * @return self
      */
@@ -131,7 +130,7 @@ class Session
 
 
     /**
-     * Destroy the session.
+     * Destroy the session (works even on cli).
      *
      * @return void
      *
@@ -143,7 +142,9 @@ class Session
         $_SESSION = array();
 
         // Delete the session cookie.
-        if (ini_get("session.use_cookies")) {
+        if (php_sapi_name() !== 'cli'
+            && ini_get("session.use_cookies")
+        ) {
             $params = session_get_cookie_params();
             setcookie(
                 session_name(),
@@ -157,6 +158,22 @@ class Session
         }
 
         // Finally, destroy the session.
-        session_destroy();
+        if (php_sapi_name() !== 'cli') {
+            session_destroy();
+        }
+    }
+
+
+
+    /**
+     * To enable var_dump() of the session object.
+     *
+     * @return array
+     *
+     * @SuppressWarnings(PHPMD.Superglobals)
+     */
+    public function __debugInfo()
+    {
+        return $_SESSION;
     }
 }

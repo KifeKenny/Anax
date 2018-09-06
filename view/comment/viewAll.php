@@ -6,9 +6,9 @@ namespace Anax\View;
 $items = isset($items) ? $items : null;
 
 // Create urls for navigation
-$urlToCreate = url("comment2/create");
-$urlToEdit = url("comment2/edit");
-$urlToRemove = url("comment2/delete");
+$urlToCreate = url("comment/create");
+$urlToEdit = url("comment/edit");
+$urlToRemove = url("comment/delete");
 
 $session = $di->get("session");
 $user_id = $session->get("user_id");

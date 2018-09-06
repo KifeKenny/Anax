@@ -195,13 +195,32 @@ Jag skippar denna :).
 Ja det tycker jag.
 
 
-
-
-
-
-
 #Kmom05
-text
+**1.Hur gick arbetet med att lyfta ut koden ur me-sidan och placera i en egen modul?**<br>
+Där var det inga problem. Jag följde övningen och fixade det rätt så snabbt. Sen var det väll lite småfel här och där som man hela tiden fick fixa till under testningen.
+<br>
+
+**2.Flöt det på bra med GitHub och kopplingen till Packagist?**<br>
+Det gick sådär, kunde ej göra så min modul updaterades automatiskt. Gjorde som
+det stod på deras hemsida mendet funkade ej. Men annars fungerade kopplingn bra.
+<br>
+**3.Hur gick det att åter installera modulen i din me-sida med composer, kunde du följa du din installationsmanual?**<br>
+
+Ja det fungerade perfekt. Enda problemet var att errorController inte vill visa mina view sidor utan bara ger mig ”404 Page not found”. Trots att om jag stänger av den fungerar sidorna perfekt och modulen fungerade på ett min mini anax jag(dev, så som det gjordes i övningen). Så har stängt av errorController tills vidare.
+<br>
+
+**4.Hur väl lyckas du enhetstesta din modul och hur mycket kodtäckning fick du med?**<br>
+
+Detta för mig var den svåraste delen, tills jag listade ut hur jag skulle göra. Fick läsa på rätt mycket inom phpUnit och googla mig fram. För det första viste jag inte hur jag skulle få in ”di” i min testning för mina klasser och samt viste jag inte hur jag skulle testa funktioner som t.ex byggde upp sidor med ”pageRender”.
+<br>
+
+Men jag hittade ett par exempel till slut och samt gjorde en mock klass som fick ersätta vissa klasser.
+<br>
+
+**5.Några reflektioner över skillnaden med och utan modul?**<br>
+Inte direkt.
+
+
 #Kmom06
 text
 #Kmom010

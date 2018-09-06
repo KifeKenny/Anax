@@ -8,6 +8,7 @@ class ComposerStaticInitf8cf3cf3667af1b0009f16f3ff832967
 {
     public static $files = array (
         '6b9cbd293adb7d895e163aebb2790539' => __DIR__ . '/..' . '/anax/common/src/functions.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         'dfc9e5dd545737efbb98020db79bfa08' => __DIR__ . '/..' . '/mos/cimage/defines.php',
         '507fe79d3e285fab95fad400b8d42245' => __DIR__ . '/..' . '/mos/cimage/functions.php',
@@ -17,7 +18,12 @@ class ComposerStaticInitf8cf3cf3667af1b0009f16f3ff832967
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
+            'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
+        ),
+        'K' => 
+        array (
+            'Kifekenny\\' => 10,
         ),
         'A' => 
         array (
@@ -26,26 +32,35 @@ class ComposerStaticInitf8cf3cf3667af1b0009f16f3ff832967
     );
 
     public static $prefixDirsPsr4 = array (
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
         'Symfony\\Component\\Yaml\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
+        'Kifekenny\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kifekenny/comment/src',
+        ),
         'Anax\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
-            1 => __DIR__ . '/..' . '/anax/request/src',
-            2 => __DIR__ . '/..' . '/anax/common/src',
-            3 => __DIR__ . '/..' . '/anax/url/src',
-            4 => __DIR__ . '/..' . '/anax/configure/src',
-            5 => __DIR__ . '/..' . '/anax/session/src',
-            6 => __DIR__ . '/..' . '/anax/textfilter/src',
-            7 => __DIR__ . '/..' . '/anax/di/src',
-            8 => __DIR__ . '/..' . '/anax/router/src',
-            9 => __DIR__ . '/..' . '/anax/response/src',
-            10 => __DIR__ . '/..' . '/anax/view/src',
-            11 => __DIR__ . '/..' . '/anax/page/src',
+            1 => __DIR__ . '/..' . '/anax/common/src',
+            2 => __DIR__ . '/..' . '/anax/response/src',
+            3 => __DIR__ . '/..' . '/anax/request/src',
+            4 => __DIR__ . '/..' . '/anax/page/src',
+            5 => __DIR__ . '/..' . '/anax/textfilter/src',
+            6 => __DIR__ . '/..' . '/anax/router/src',
+            7 => __DIR__ . '/..' . '/anax/configure/src',
+            8 => __DIR__ . '/..' . '/anax/url/src',
+            9 => __DIR__ . '/..' . '/anax/session/src',
+            10 => __DIR__ . '/..' . '/anax/di/src',
+            11 => __DIR__ . '/..' . '/anax/htmlform/src',
             12 => __DIR__ . '/..' . '/anax/database/src',
-            13 => __DIR__ . '/..' . '/anax/htmlform/src',
+            13 => __DIR__ . '/..' . '/anax/view/src',
+            14 => __DIR__ . '/..' . '/kifekenny/comment/src',
         ),
     );
 

@@ -8,7 +8,7 @@ Anax DI
 [![Build Status](https://scrutinizer-ci.com/g/canax/di/badges/build.png?b=master)](https://scrutinizer-ci.com/g/canax/di/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/canax/di/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/canax/di/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/canax/di/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/canax/di/?branch=master)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/067df5c1-e2f6-4f2e-b479-79cfe511ae7c/mini.png)](https://insight.sensiolabs.com/projects/067df5c1-e2f6-4f2e-b479-79cfe511ae7c)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/850a0607-ad17-4dcc-924c-ad0bb6ae8d63/mini.png)](https://insight.sensiolabs.com/projects/850a0607-ad17-4dcc-924c-ad0bb6ae8d63)
 
 Anax DI container for dependency injection using creation and lazy loading of services.
 

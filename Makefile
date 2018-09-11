@@ -278,7 +278,7 @@ install-tools-bash:
 .PHONY: check-tools-bash
 check-tools-bash:
 	@$(call HELPTEXT,$@)
-	which $(SHELLCHECK) && $(SHELLCHECK) --version
+	# which $(SHELLCHECK) && $(SHELLCHECK) --version
 	which $(BATS) && $(BATS) --version
 
 

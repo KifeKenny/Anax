@@ -222,5 +222,33 @@ Inte direkt.
 
 
 #Kmom06
-text
+**1. Har du någon erfarenhet av automatiserade testar och CI sedan tidigare?**
+
+Ja jag har använt Travis och CI innan i en annan kurs men inte med mysql databas.
+
+
+**2. Hur ser du på begreppen, bra, onödigt, nödvändigt, tidskrävande?**
+
+Jag tycker dem är bra och användbara. Lite tidskrävande men det är värt det.
+
+
+**3. Hur stor kodtäckning lyckades du uppnå i din modul?**
+
+Jag har testat allt utom submit funktionerna för ”create”, ”delete” och ”edit”. Hittade inget sätt att testa submit men det borde väl gå på något sätt.
+
+
+Mina andra tester, testar mer så att programmet inte kraschar när den kör igenom koden. Gjorde också så att den första kommentaren i databasen är till för testning och syns inte på kommentar sidan.
+
+
+**4. Berätta hur det gick att integrera mot de olika externa tjänsterna?**
+
+Det gick bra lite struligt i början eftersom mina tester använder sig av en mysql databas så jag fick ändra lite i ”.yaml” filerna. Tog ett tag eftersom jag inte hittade en bra tutorial på hur man fixade mysql i Travis och Scrutinizer men det löste sig till slut.
+
+
+**5. Vilken extern tjänst uppskattade du mest, eller har du förslag på ytterligare externa tjänster att använda?**
+
+Jag gillade Scrutinizer mest eftersom den kör testerna och sen kollar den kodstandar och sådant också. Har ingen erfarenhet utav andra tjänster så kan inte ge några förslag.
+
+
+
 #Kmom010

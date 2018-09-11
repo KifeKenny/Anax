@@ -28,6 +28,12 @@ endif;
 
 
 <?php foreach ($items as $item) : ?>
+<?php
+if ($item->id == 1) {
+    continue;
+}
+
+?>
 <div class="commentBorder">
 <p>
     <strong><?=$item->title?></strong>

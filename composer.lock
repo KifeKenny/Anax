@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "08ff1b1da2b46b6df50c2d62735562ed",
-    "content-hash": "e0d72a7097f20243793c0cf534348868",
+    "hash": "3dd55c8e8e217cff14c479c7080f960e",
+    "content-hash": "4d6b60837bd90c5a739d70c53e7a9375",
     "packages": [
         {
             "name": "anax/common",
@@ -697,16 +697,16 @@
         },
         {
             "name": "kifekenny/comment",
-            "version": "1.1.4",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KifeKenny/comment-remverk.git",
-                "reference": "bf3de61c4d352903c062da91e9f3af5a5e6f7078"
+                "reference": "5797565c8f2c80630d86044691d7157d917165bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KifeKenny/comment-remverk/zipball/bf3de61c4d352903c062da91e9f3af5a5e6f7078",
-                "reference": "bf3de61c4d352903c062da91e9f3af5a5e6f7078",
+                "url": "https://api.github.com/repos/KifeKenny/comment-remverk/zipball/5797565c8f2c80630d86044691d7157d917165bc",
+                "reference": "5797565c8f2c80630d86044691d7157d917165bc",
                 "shasum": ""
             },
             "require": {
@@ -753,7 +753,7 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2018-09-03 11:22:26"
+            "time": "2018-09-06 15:32:26"
         },
         {
             "name": "michelf/php-markdown",
